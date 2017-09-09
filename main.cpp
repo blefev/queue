@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	QUEUE myQueue;
+	Queue myQueue;
 	ifstream input;
 	int cmd, argument, ret;
     node* frontNode = NULL;
@@ -55,7 +55,7 @@ int main()
             }
             break;
         case 6:
-            myQueue.printq();
+            myQueue.print();
             break;
         }
 	}

@@ -12,14 +12,14 @@ struct node{
 };
 
 /* Linked list class definition */
-class QUEUE{
+class Queue{
 public:
-	QUEUE();
+	Queue();
 	void enq(int);
 	bool deq();
     bool isEmpty();
     node* getFront();
-	void printq();
+	void print();
 	node* makeNode(int, node*);
 private:
 	node* front;

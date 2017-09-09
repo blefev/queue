@@ -1,12 +1,12 @@
 #include "queue.h"
 
-QUEUE::QUEUE()
+Queue::Queue()
 {
 	this->front = NULL;
     this->back = NULL;
 }
 
-void QUEUE::enq(int num)
+void Queue::enq(int num)
 {
 	// Get a reference to front
 	node** dblNodePtr = &(this->front);
@@ -20,7 +20,7 @@ void QUEUE::enq(int num)
 	*dblNodePtr = this->makeNode(num, NULL);
 }
 
-bool QUEUE::deq()
+bool Queue::deq()
 {
 	// Return if no front
 	if (!this->front) {
@@ -35,7 +35,7 @@ bool QUEUE::deq()
 	return true;
 }
 
-node* QUEUE::makeNode(int val, node* nextNode = NULL)
+node* Queue::makeNode(int val, node* nextNode = NULL)
 {
 	node* madeNode = new node;
 
@@ -45,18 +45,18 @@ node* QUEUE::makeNode(int val, node* nextNode = NULL)
 	return madeNode;
 }
 
-node* QUEUE::getFront()
+node* Queue::getFront()
 {
 	return this->front;
 }
 
-bool QUEUE::isEmpty()
+bool Queue::isEmpty()
 {
 	// If the front is null, the list is empty
 	return (this->front != NULL);
 }
 
-void QUEUE::printq()
+void Queue::print()
 {
 	node* nodePtr = this->front;
 
