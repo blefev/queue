@@ -1,4 +1,5 @@
 #include <fstream>
+#include <string>
 #include "queue.h"
 using namespace std;
 
@@ -8,18 +9,28 @@ int main()
 	ifstream input;
 	int cmd, argument, ret;
     node* frontNode = NULL;
-	input.open("cmd.txt");
+	string help = "Commands:\n"
+		"1: Enqueue an item.\n"
+		"2: Dequeue.\n"
+		"3: Get front.\n"
+		"4: Check if empty.\n"
+		"5: Print the queue.\n"
+		"6: Help. \n"
+		"7: Quit.\n"
+
+	cout << help
 
     // while there is something to read from the file, read
-	while (input >> cmd)
+	while ( cin >> cmd)
 	{
         // switch on the command we read from the file
 		switch (cmd)
 		{
-        // if the cmd requires a parameter, read it from the file and call the 
+        // if the cmd requires a parameter, read it from the file and call the
         // associated function
 		case 1:
-			input >> argument;
+			cout << "Enter an integer: ";
+			cin >> argument;
 			myQueue.enq(argument);
             cout << "Added " << argument << " to the queue\n";
 			break;
@@ -54,10 +65,13 @@ int main()
                 cout << "Queue has data\n";
             }
             break;
-        case 6:
+        case 5:
             myQueue.print();
             break;
+		case 6:
+			exit(0);
         }
+
 	}
 	input.close();
 
