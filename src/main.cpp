@@ -16,9 +16,9 @@ int main()
 		"4: Check if empty.\n"
 		"5: Print the queue.\n"
 		"6: Help. \n"
-		"7: Quit.\n"
+		"7: Quit.\n";
 
-	cout << help
+	cout << help;
 
     // while there is something to read from the file, read
 	while ( cin >> cmd)
